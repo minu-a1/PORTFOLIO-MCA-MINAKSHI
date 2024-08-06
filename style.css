@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("https://img.freepik.com/free-photo/red-light-round-podium-black-background-mock-up_43614-950.jpg?t=st=1716689959~exp=1716693559~hmac=07afc5bdd6fc71f1cb427c99990056f7e24a812809789a407c86a1a41c1dd753&w=740") no-repeat center;
+    background: url("https://i.pinimg.com/originals/b4/59/e8/b459e899627bbf006b19f66ed2ac3637.gif") no-repeat center;
     height: 120vh;
     color: #fff;
     min-height: 500px;
