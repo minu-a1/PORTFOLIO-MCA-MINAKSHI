@@ -1,0 +1,49 @@
+.food{
+   height: 600px;
+   width: 1690px; 
+}
+#countdown{
+    height: 200px;
+    width: 1670px;
+    background-color:rgba(174, 9, 9, 0.969);
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 0px;
+}
+.fo{
+    height: 600px;
+   width: 1700px; 
+}
+.quote{
+   background-image: url("./mmmmmm.png");
+   background-size: cover;
+
+}
+.r{
+    height: 750px;
+    width: 1690px ;
+    background-color:rgba(143, 7, 7, 0.82) ;
+}
+.box{
+    height: 400px;
+    width: 1400px ;
+    background-color:white ;
+   border-radius:2% ;
+}
+.hurry{
+    height: 400px;
+    width:1690px;
+}
+.last{
+    height: 250px;
+    background-color:rgba(143, 7, 7, 0.82) ;
+    width:1690px;
+    margin-left: 0px;
+}
+.ho{
+    color: white;
+}
+.ho:hover{
+   background-color:rgba(255, 255, 255, 0.444) ;
+}

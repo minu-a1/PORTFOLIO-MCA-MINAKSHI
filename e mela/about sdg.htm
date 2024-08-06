@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=
+"width=device-width, initial-scale=1.0">
+	<title>Rotating Gallery</title>
+	<link rel="stylesheet" href="/style.css">
+	<style>
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100vh;
+	overflow: hidden;
+	background-image: url("./photoes/GREEN\ AND\ CLEAN\ CITY.gif");
+}
+
+.image-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	transform-style: preserve-3d;
+	transform: perspective(1000px) rotate(0deg);
+	transition: transform 0.7s;
+}
+
+.image-container span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	cursor: pointer;
+	transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+	transition: transform 0.3s ease;
+}
+
+.image-container span img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+	width: 80%;
+	transition: transform 0.3s ease;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay.active {
+	display: flex;
+}
+
+.popup-img {
+	width: 300px;
+	height: 300px;
+	margin-top: -5%;
+	margin-left: -4%;
+	background-color: rgb(82, 80, 80);
+	border-radius: 15px;
+
+}
+
+.btn-container {
+	position: relative;
+	width: 80%;
+}
+
+.btn {
+	position: absolute;
+	bottom: -120px;
+	background-color: red;
+	color: black;
+	font-weight: bold;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#prev {
+	left: 20%;
+}
+
+#next {
+	right: 20%;
+}
+
+#btn:hover {
+	filter: brightness(1.5);
+}
+.minu{
+	font-family: 'Times New Roman', Times, serif;
+	color: white;
+	background-image:url("https://img.freepik.com/free-photo/red-light-round-podium-black-background-mock-up_43614-950.jpg?t=st=1713412398~exp=1713415998~hmac=b18b501d7a4c52433e3cbc08673dbf61010f13c254021848201560acc561b806&w=740");
+}
+
+
+	</style>
+</head>
+<body>
+	<div class="minu">
+		<h1>What are the Sustainable Development Goals?</h1><br><BR>
+<p>The Sustainable Development Goals (SDGs), also known as the Global Goals, were adopted by the United Nations in 2015 as a universal call to action to end poverty, protect the planet, and ensure that by 2030 all people enjoy peace and prosperity.
+The 17 SDGs are integrated—they recognize that action in one area will affect outcomes in others, and that development must balance social, economic and environmental sustainability.
+Countries have committed to prioritize progress for those who're furthest behind. The SDGs are designed to end poverty, hunger, AIDS, and discrimination against women and girls.
+The creativity, knowhow, technology and financial resources from all of society is necessary to achieve the SDGs in every context.</p><br><Br><br><BR>
+	</div>
+	<div class="image-container">
+		<span style="--i: 1">
+			<img src=
+"./photoes/GREEN AND CLEAN CITY.gif" height="200px,width="400px"alt="">
+		</span>
+		<span style="--i: 2">
+			<img src=
+"./photoes/IMG-20240417-WA0032.jpg" height="200px,width="400px"alt="">
+		</span>
+		<span style="--i: 3">
+			<img src=
+"./photoes/IMG-20240417-WA0035.jpg" height="200px,width="400px"
+				alt="">
+		</span>
+		<span style="--i: 4">
+			<img src=
+"./photoes/IMG-20240417-WA0023.jpg" height="200px,width="400px"
+				alt="">
+		</span>
+		<span style="--i: 5">
+			<img src=
+"./photoes/IMG-20240417-WA0024.jpg" height="200px,width="400px" alt="">
+		</span>
+		<span style="--i: 6">
+			<img src=
+"./photoes/IMG-20240417-WA0025.jpg" height="200px,width="400px"
+				alt="">
+		</span>
+		<span style="--i: 7">
+			<img src=
+"./photoes/IMG-20240417-WA0030.jpg" height="200px,width="400px"alt="">
+		</span>
+		<span style="--i: 8">
+			<img src=
+"./photoes/IMG-20240417-WA0037.jpg" height="200px,width="400px" alt="">
+		</span>
+	<span style="--i: 9">
+		<img src=
+"./photoes/IMG-20240417-WA0028.jpg" height="200px,width="400px" alt="">
+	</span>
+	<span style="--i: 10">
+		<img src=
+"./photoes/IMG-20240417-WA0036.jpg"  height="200px,width="400px"alt="">
+	</span>
+</div>
+
+	<div class="overlay" id="overlay">
+		<img class="popup-img" id="popup-img" src=""
+			alt="Popup Image">
+	</div>
+
+	<div class="btn-container">
+		<button class="btn" id="prev">
+			Left
+		</button>
+		<button class="btn" id="next">
+			Right
+		</button>
+	</div>
+
+
+	<script>
+const imageContainer = 
+	document.querySelector('.image-container');
+const prevBtn = 
+	document.getElementById('prev');
+const nextBtn = 
+	document.getElementById('next');
+const overlay = 
+	document.getElementById('overlay');
+const popupImg = 
+	document.getElementById('popup-img');
+const images = 
+	document.querySelectorAll('.image-container span img');
+
+let x = 0;
+prevBtn.addEventListener('click', () => {
+	x = x + 45;
+	rotate();
+});
+nextBtn.addEventListener('click', () => {
+	x = x - 45;
+	rotate();
+});
+
+images.forEach(image => {
+	image.addEventListener('click', () => {
+		const src = image.getAttribute('src');
+		popupImg.setAttribute('src', src);
+		overlay.classList.add('active');
+	});
+});
+
+overlay.addEventListener('click', () => {
+	overlay.classList.remove('active');
+});
+
+function rotate() {
+	imageContainer.style.transform = 
+		`perspective(1000px) rotateY(${x}deg)`;
+}
+
+	</script>
+</body>
+
+</html>

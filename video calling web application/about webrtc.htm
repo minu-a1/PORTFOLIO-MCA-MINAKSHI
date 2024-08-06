@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        height: 600px;
+        width: 1200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .main img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .text{
+        position: absolute;
+        top: 100%;
+
+        color: white;
+        width: 100%;
+        background-color: rgba(234, 35, 35, 0.54);
+        transition: .15s linear;
+    
+
+      }
+
+      .main:hover .text{
+        top: 0;
+
+      }
+
+
+      button{
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 10px;
+      }
+      button:hover{
+        color: rgb(231, 20, 20);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid ;
+       
+      }
+      button:active{
+        color: rgb(34, 20, 231);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid ;
+       
+      }
+
+      input{
+        background-color: red;
+        /* color: blue; */
+      }
+      input[type="text"]:hover{
+        background-color: rgb(252, 252, 252);
+      }
+
+      input:focus{
+        color: aqua;
+        background-color: cornflowerblue;
+      }
+      a:active{
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body style="background-image: url(./th.jpeg)">
+    <div class="main">
+      <img
+        src="./gif1.webp"
+        alt=""
+      />
+
+      <div class="text">
+        <p>
+            <h1 style="color: rgb(53, 4, 199);">Introduction to WebRTC</h1>
+            
+           1. WebRTC stands for Web Real-Time Communication. It is an open source and free project that used to provide real-time communication to mobile applications and web browsers with the help of API’s(Application Programming Interface). <br><br>2.This project emerged as a new standard which extends the web-browsing model by enabling the browser in a peer-to-peer manner.<br><br> 3.JavaScript API’s, HTML5 tags, underlying communication protocols etc. were defined by the W3C(World Wide Web Consortium) and IETF(Internet Engineering Task Force) jointly in order to make a trustworthy communication channel between the future web browsers. <br><br>4.Basically, the main idea was to define the WebRTC API which allows the secure access to the input peripherals such as microphones and webcams on a device to share or exchange the media-data, real-time data with a remote device in a peer-to-peer manner.
+            
+
+        </p>
+        <p>
+            For Example, Video conference, live video chat, sharing your favorite moment among all your friends are some examples where WebRTC exists internally. 
+        </p>
+        <p>
+            <h1 style="color: blue;">WORKING OF WEB RTC</h1>
+            How WebRTC works in the browser?
+
+WEBRTC is basically web real-time communication through browsers. It allows communication between browsers. A WEBRTC web application is programmed as a mixture of HTML and JavaScript.
+<BR>The functioning of WEBRTC can be divided into three components:<BR>
+<B style="color: rgb(0, 0, 0);">1.MediaStream: </B>The first step is to have the data that the user want to share. In this case, the stream that user want (audio/video), the mode of communication to establish is captured. Local media stream grants the browser to have access to stream devices such as the camera, web microphone. It also allows the browser to capture media. A user can make use of getUserMedia() function to get the access from the browser.<BR>
+<B style="color: rgb(10, 0, 0);">2.RTCPeerConnection:</B> Once the user has decided stream of communication then the next step is to connect it with the partner’s system. It allows your browser to exchange data directly with partner browsers (peers) for voice and video calls. It allows the association between the sender and the receiver through STUN and TURN servers.<BR>
+<B style="color: rgb(11, 0, 0);">3.RTCDataChannel: </B>It grants the browsers to exchange data bidirectional peer-to-peer. CreateDataChannel() function is called for the first time on an instantiated PeerConnection object.
+        </p>
+      </div>
+    </div>
+
+
+    
+    <button>click </button>
+
+    <!-- <button>click </button> -->
+  </body>
+</html>
